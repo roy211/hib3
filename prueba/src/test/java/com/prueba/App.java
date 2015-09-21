@@ -35,7 +35,7 @@ public class App {
 		em.persist(c);
 		tx.commit(); 
 		*/
-		 Query query = em.createQuery("select c from Correo c where c.prove.local.lugar='venezuela' ");
+		Query query = em.createQuery("select c from Correo c where c.prove.empresa='gmail' ");
 		 List<Correo> resultList = query.getResultList();
 		 
 		 System.out.println(resultList);
