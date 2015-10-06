@@ -29,7 +29,7 @@ public class App {
 		Correo b = new Correo();
 		b.setCliente(a);
 		b.setDireccion("roy@hotmail.com");
-		
+		holaaaaaaaaaaaaaaaaaaaaa!!
 		em.persist(b);
 		
 		Correo c = new Correo();
