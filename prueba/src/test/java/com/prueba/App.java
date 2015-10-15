@@ -16,7 +16,7 @@ public class App {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-
+////////
 		
 	/*	Usuario a = new Usuario();
 		a.setId(10L);
@@ -35,6 +35,12 @@ public class App {
 		em.persist(c);
 		tx.commit(); 
 		*/
+		
+		Correo c = em.find(Correo.class, 4L);
+		c.setDireccion("actualizando@hotmail.com");
+		em.flush();
+		tx.commit();
+		
 		Query query = em.createQuery("select c from Correo c where c.prove.empresa='gmail' ");
 		 List<Correo> resultList = query.getResultList();
 		 
