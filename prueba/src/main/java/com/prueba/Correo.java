@@ -19,7 +19,7 @@ public class Correo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@ManyToOne(optional = true)
 	private Usuario cliente;
 
 	@ManyToOne( optional = false)
