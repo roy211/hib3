@@ -37,10 +37,11 @@ public class App {
 		tx.commit(); 
 		*/
 
-		
+		Usuario a = new Usuario();
 		Correo c = em.find(Correo.class, 4L);
 		System.out.println(c.getId());
 		c.setDireccion("actua6lizand5o@hotmail.com");
+		c.setCliente(a);
 		em.merge(c);
 		tx.commit();
 	
