@@ -37,27 +37,35 @@ public class App {
 		tx.commit(); 
 		*/
 
-		Usuario a = new Usuario();
+	/*	Usuario a = new Usuario();
 		Correo c = em.find(Correo.class, 4L);
 		System.out.println(c.getId());
 		c.setDireccion("actua6lizand5o@hotmail.com");
 		c.setCliente(a);
 		em.merge(c);
-		tx.commit();
+		tx.commit();*/
 	
-		Query query = em.createQuery("select c from Correo c where c.prove.empresa='gmail' ");
-		 List<Correo> resultList = query.getResultList();
+	//	Query query = em.createQuery("select c from Correo c where c.prove.empresa='gmail' ");
+		
+		Query query = em.createNamedQuery("Correo.buscar");
+		
+		List<Correo> resultList = query.getResultList();
 		 
 		 System.out.println(resultList);
-		
+		int i =0;
 		 for (Correo x : resultList){
 			 
-			 System.out.println(x.getDireccion());
+			 /*System.out.println(x.getDireccion());
 			 System.out.println(x.getCliente().getNombreCompleto());
 			 System.out.println(x.getProve().getEmpresa());
-			 System.out.println(x.getProve().getLocal().getLugar());
+			 System.out.println(x.getProve().getLocal().getLugar());*/
+			 
+			System.out.println(++i); 
 			 
 		 }
+		 
+		 
+		 
 		/*
 		Correo resul = em.find(Correo.class, 2L);
 		
