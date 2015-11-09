@@ -1,3 +1,4 @@
+
 package com.prueba;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class App {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("testunit2");
 		EntityManager em = emf.createEntityManager();
+
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 
@@ -25,7 +27,7 @@ public class App {
 		Correo b = new Correo();
 		b.setCliente(a);
 		b.setDireccion("roy@hotmail.com");
-		
+		holaaaaaaaaaaaaaaaaaaaaa!!
 		em.persist(b);
 		
 		Correo c = new Correo();
@@ -35,19 +37,36 @@ public class App {
 		em.persist(c);
 		tx.commit(); 
 		*/
-		Query query = em.createQuery("select c.direccion from Correo c ");
-		 List<Correo> resultList = query.getResultList();
+
+	/*	Usuario a = new Usuario();
+		Correo c = em.find(Correo.class, 4L);
+		System.out.println(c.getId());
+		c.setDireccion("actua6lizand5o@hotmail.com");
+		c.setCliente(a);
+		em.merge(c);
+		tx.commit();*/
+	
+	//	Query query = em.createQuery("select c from Correo c where c.prove.empresa='gmail' ");
+		
+		Query query = em.createNamedQuery("Correo.buscar");
+		
+		List<Correo> resultList = query.getResultList();
 		 
 		 System.out.println(resultList);
-		
+		int i =0;
 		 for (Correo x : resultList){
 			 
-			 System.out.println(x.getDireccion());
+			 /*System.out.println(x.getDireccion());
 			 System.out.println(x.getCliente().getNombreCompleto());
 			 System.out.println(x.getProve().getEmpresa());
-			 System.out.println(x.getProve().getLocal().getLugar());
+			 System.out.println(x.getProve().getLocal().getLugar());*/
+			 
+			System.out.println(++i); 
 			 
 		 }
+		 
+		 
+		 
 		/*
 		Correo resul = em.find(Correo.class, 2L);
 		
@@ -57,3 +76,4 @@ public class App {
 	}
 
 }
+

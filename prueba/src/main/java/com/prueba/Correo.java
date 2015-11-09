@@ -7,19 +7,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name = "correo")
+
+
+@NamedNativeQuery(name=Correo.BUSCAR_TODOS, query="SELECT c.* from correo c inner join estatus e on c.id = e.idEstatus where e.codigo ='abierto'  ",resultClass=Correo.class) 
 public class Correo {
+	
+	public static final String BUSCAR_TODOS = "Correo.buscar"; 
 	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@ManyToOne(optional = true)
 	private Usuario cliente;
 
 	@ManyToOne( optional = false)

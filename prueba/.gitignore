@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 *.class
 *.classpath
 *.project
+=======
+*.class
+*.classpath
+*.project
+>>>>>>> branch 'master' of https://github.com/roy211/hib3.git
 *.settings
 /target/
