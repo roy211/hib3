@@ -33,5 +33,12 @@
   		<artifactId>mysql-connector-java</artifactId>
   		<version>5.1.6</version>
   	</dependency>
+  	
+  	
+  	<dependency>
+    <groupId>org.kie</groupId>
+    <artifactId>kie-server-services</artifactId>
+    <version>6.2.0.Final</version>
+</dependency>
   </dependencies>
 </project>
